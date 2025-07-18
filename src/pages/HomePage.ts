@@ -19,7 +19,7 @@ export default class HomePage{
     }
 
     async navigate(){
-        await this.page.goto("https://login.salesforce.com/?locale=au");
+        await this.page.goto("https://velocity-drive-7571.lightning.force.com/lightning/o/Case/list?filterName=AllOpenCases");
     }
 
     async verifyHomePageLBL(){
