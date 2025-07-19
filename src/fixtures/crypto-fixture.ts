@@ -1,4 +1,4 @@
-import {test as baseTest} from "playwright/test";
+import {test as baseTest} from "./pom-fixture";
 import CryptoUtils from "../utils/CryptoUtils";
 
 
