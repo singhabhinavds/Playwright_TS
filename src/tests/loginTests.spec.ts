@@ -1,8 +1,11 @@
-import HomePage from "../pages/HomePage";
-import ContactsPage from "../pages/ContactsPage";
 import {test} from "../fixtures/crypto-fixture";
 
-test.skip("Login-Logout", async ({ page, loginPage, homePage, cryptoUtils }) => {
+test.beforeEach("Test Setup", async({homePage}) => {
+  await homePage.navigate();
+  await homePage.verifyHomePageLBL();
+})
+
+test.skip("Login-Logout", async ({ loginPage, homePage, cryptoUtils }) => {
   const userid = cryptoUtils.decrypt(process.env.userid!); 
   const password = cryptoUtils.decrypt(process.env.password!);
 
@@ -16,8 +19,6 @@ test.skip("Login-Logout", async ({ page, loginPage, homePage, cryptoUtils }) => 
 
 
 test("CreateNewContact", async({ page, homePage, contactsPage }) => {
-  await homePage.navigate();
-  await homePage.verifyHomePageLBL();
   await homePage.clickContactsBTN();
   await contactsPage.verifyContactPageLBL();
   await page.waitForLoadState();
@@ -30,9 +31,10 @@ test("CreateNewContact", async({ page, homePage, contactsPage }) => {
   await contactsPage.enterNewContactFormAccountNameTB("Practice");
   await contactsPage.clickNewContactFormSaveBTN();
   //await contactsPage.verifyNewConactAddedLBL();
-  await homePage.Logout();
 });
 
-test("empty", async ({ page, homePage, cryptoUtils }) => {
-
+test("Logout", async ({ homePage }) => {
+  await homePage.navigate();
+  await homePage.verifyHomePageLBL();
+  await homePage.Logout();
 });
