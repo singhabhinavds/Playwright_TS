@@ -1,9 +1,5 @@
-import {test} from "../fixtures/crypto-fixture";
+import {test} from "../fixtures/hooks-fixture";
 
-test.beforeEach("Test Setup", async({homePage}) => {
-  await homePage.navigate();
-  await homePage.verifyHomePageLBL();
-})
 
 test.skip("Login-Logout", async ({ loginPage, homePage, cryptoUtils }) => {
   const userid = cryptoUtils.decrypt(process.env.userid!); 
@@ -18,7 +14,7 @@ test.skip("Login-Logout", async ({ loginPage, homePage, cryptoUtils }) => {
 });
 
 
-test("CreateNewContact", async({ page, homePage, contactsPage }) => {
+test("CreateNewContact", async({ page, homePage, contactsPage, goToURL }) => {
   await homePage.clickContactsBTN();
   await contactsPage.verifyContactPageLBL();
   await page.waitForLoadState();
@@ -33,8 +29,7 @@ test("CreateNewContact", async({ page, homePage, contactsPage }) => {
   //await contactsPage.verifyNewConactAddedLBL();
 });
 
-test("Logout", async ({ homePage }) => {
-  await homePage.navigate();
-  await homePage.verifyHomePageLBL();
-  await homePage.Logout();
+test("Logout", async ({ homePage, goToURL, logout }) => {
+  
+  
 });
