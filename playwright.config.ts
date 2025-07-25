@@ -52,6 +52,10 @@ export default defineConfig({
         storageState: "./playwright/.auth/auth.json",
        },
     },
+    {
+      name : 'Tests without Global Setup',
+      use: { ...devices['Desktop Chrome']},
+    },
 
     /*{
       name: 'firefox',
