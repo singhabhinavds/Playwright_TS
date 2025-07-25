@@ -1,4 +1,3 @@
-import ContactsPage from "../pages/ContactsPage";
 import {test as baseTest} from "./crypto-fixture";
 
 
