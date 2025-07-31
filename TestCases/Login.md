@@ -1,4 +1,4 @@
-# Test Cases for Login Fucntionality in Salesforce
+# Test Cases for Login Functionality in Salesforce
 
 1. TC1 : Correct Login - Positive Flow
 

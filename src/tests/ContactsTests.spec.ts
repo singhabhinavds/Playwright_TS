@@ -2,7 +2,7 @@ import {test} from "../fixtures/hooks-fixture";
 
 
 
-test.skip("CreateNewContact", async({ page, homePage, contactsPage, goToURL, logout }) => {
+test.only("TC1 - Add New Contact", async({ page, homePage, contactsPage, goToURL, logout }) => {
   await homePage.clickContactsBTN();
   await contactsPage.verifyContactPageLBL();
   await page.waitForLoadState();
